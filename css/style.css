@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 90px;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  border: 2px solid black;
+  min-height: calc(100vh - 90px);
+}
+
+/* header */
+.site-header {
+  font-size: 3rem;
+  background-color: orange;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  border-bottom: 2px solid black;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.logo {
+  display: inline-block;
+  line-height: 90px;
+  color: white;
+}
+
+.logo:visited {
+  color: white;
+}
+
+.logo:hover,
+.logo:active {
+  color: black;
+}
+
+.insta {
+  position: absolute;
+  right: 50px;
+  top: 12px;
+  font-size: 1rem;
+  color: white;
+}
+
+.insta:visited {
+  color: white;
+}
+
+.insta:hover,
+.insta:active {
+  color: black;
+}
+
+/* layout */
+.sidebar,
+.content,
+.rightbar {
+  float: left;
+  min-height: 530px;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
+
+.sidebar {
+  width: 20%;
+  text-align: center;
+  border-right: 2px solid black;
+  padding: 24px 10px;
+}
+
+.content {
+  width: 60%;
+  text-align: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin-left: -2px;
+  padding: 24px 20px;
+}
+
+.rightbar {
+  width: 20%;
+  text-align: center;
+  border-left: 2px solid black;
+  margin-left: -2px;
+  padding: 24px 10px;
+}
+
+.site-footer {
+  clear: both;
+  border-top: 2px solid black;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
+
+.menu {
+  color: black;
+}
+
+.menu:visited {
+  color: black;
+}
+
+.menu:hover {
+  color: orange;
+}
+
+.menu:active {
+  color: white;
+}
+
+.menu-group {
+  margin-top: 0;
+}
+
+.year-menu {
+  margin-top: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* content styles */
+.page-title {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.intro-text {
+  line-height: 1.9;
+  font-size: 1.2rem;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3칸 고정 */
+  gap: 30px;
+  justify-items: center; /* 카드 가운데 정렬 */
+}
+
+.card {
+  width: 100px;   /* 기준 */
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid black;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.card-label {
+  border: 2px solid black;
+  padding: 4px 6px;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1rem;
+  background: white;
+}
+
+.card-label + .card-label {
+  margin-top: 4px;
+}
+
+.aside-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.aside-links img {
+  border: 2px solid black;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .sidebar,
+  .content,
+  .rightbar {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    border-left: none;
+    border-right: none;
+    min-height: auto;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 2px solid black;
+  }
+
+  .content {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .rightbar {
+    border-left: none;
+  }
+
+  .insta {
+    right: 20px;
+  }
+
+  .site-header {
+    font-size: 2.2rem;
+  }
+}
