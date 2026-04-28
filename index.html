@@ -21,46 +21,87 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #ccc;
-    }
-
     section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 24px;
     }
-
+    
     h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 12px;
     }
-
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
     .project {
       background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
-    .project a {
-      text-decoration: none;
-      color: #007bff;
+    
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    .project h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    
+    .project p {
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .stack {
+      font-size: 14px;
+      color: #777;
       font-weight: bold;
     }
+    
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 8px;
+      padding: 8px 12px;
+      background: #111;
+      color: white;
+      border-radius: 8px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    
+    .project a:hover {
+      background: #333;
+    }
+    
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .about-text {
+      line-height: 1.8;
+      color: #555;
+      font-size: 16px;
+    }
+    
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 32px 20px;
       color: #777;
+      font-size: 14px;
     }
   </style>
 
@@ -68,52 +109,51 @@
 <body>
   <header>
     <h1>SO SO Portfolio</h1>
-    <p>데이터 분석 | AI | 문제 해결 중심 개발자</p>
+    <p>데이터 분석 | AI</p>
   </header>
   <section>
     <h2>👩‍💻 About Me</h2>
     <p>
     </p>
   </section>
+
   <section>
-    <h2>📂 Projects</h2>
-<div class="project">
-  <h3>📊 이커머스 데이터 분석 프로젝트</h3>
-  <p>
-    이커머스(Olist) 데이터 기반으로 고객 및 판매자 문제 도출 및 해결방안을 제시
-  </p>
-  <p><b>기술 스택:</b> Python, Big Query, Looker Studio</p>
-  <a href="https://github.com/rlathwjd/Olist_Analysis" target="_blank">
-    👉 프로젝트 보기
-  </a>
+  <h2>📂 Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project">
+      <h3>📊 이커머스 데이터 분석 프로젝트</h3>
+      <p>Olist 데이터 기반 고객 및 판매자 문제 도출 및 해결방안 제시</p>
+      <p class="stack">Python · BigQuery · Looker Studio</p>
+      <a href="https://github.com/rlathwjd/Olist_Analysis" target="_blank">프로젝트 보기</a>
+    </div>
+
+    <div class="project">
+      <h3>📊 SKT 데이터를 활용한 서울세계불꽃축제 방문객 분석</h3>
+      <p>OD 데이터를 활용한 방문객 동향 파악 및 군집분석</p>
+      <p class="stack">Python · Tableau</p>
+      <a href="https://github.com/rlathwjd/Seoul-International-Fireworks-Festival_Analysis" target="_blank">프로젝트 보기</a>
+    </div>
+
+    <div class="project">
+      <h3>🎧 pH-1 소개 사이트</h3>
+      <p>한번쯤은 해보고 싶었던 취향을 담은 웹사이트 제작</p>
+      <p class="stack">HTML · CSS · JavaScript</p>
+      <a href="https://rlathwjd.github.io/pH-1/" target="_blank">사이트 바로가기</a>
+    </div>
+
+    <div class="project">
+      <h3>🧠 AI 뉴스 기반 사업 추천 시스템</h3>
+      <p>AI타임스 최신 기사 기반 신규 사업 아이템 추천 RAG 시스템</p>
+      <p class="stack">Python · Streamlit · LangChain · ChromaDB · Groq API</p>
+      <a href="https://github.com/rlathwjd/ai-news-business-recommender" target="_blank">프로젝트 보기</a>
+      <a href="https://ai-news-business-recommender-ezuhhysyrrg36xjy6wjkfq.streamlit.app/" target="_blank">서비스 바로가기</a>
+    </div>
+
+  </div>
+</section>
   
-  <h3>📊 SKT 데이터를 활용한 서울세계불꽃축제 방문객 분석</h3>
-  <p>
-    OD 데이터(이동, 체류)를 활용한 서울세계불꽃축제 방문객 동향 파악 및 군집분석
-  </p>
-  <p><b>기술 스택:</b> Python, Tableau</p>
-  <a href="https://github.com/rlathwjd/Seoul-International-Fireworks-Festival_Analysis" target="_blank">
-    👉 프로젝트 보기
-  </a>
-  
-  <h3>🎧 pH-1 프로젝트</h3>
-  <p>한번쯤은 해보고 싶었던 취향 담은 웹사이트 제작~!</p>
-  <a href="https://rlathwjd.github.io/pH-1/" target="_blank">👉 사이트 바로가기</a>
-  
-  <h3>🧠 AI 뉴스 기반 사업 추천 시스템</h3>
-  <p>
-    AI타입스의 최신 AI 뉴스 데이터를 기반으로 신규 사업 아이템을 추천하는 RAG 기반 AI 시스템
-  </p>
-  <p><b>기술 스택:</b> Python, Streamlit, LangChain, ChromaDB, Groq API</p>
-  <a href="https://github.com/rlathwjd/ai-news-business-recommender" target="_blank">
-    👉 프로젝트 보기
-  </a>
-  <br><br>
-  <a href="https://ai-news-business-recommender-ezuhhysyrrg36xjy6wjkfq.streamlit.app/" target="_blank">
-    👉 서비스 바로가기
-  </a>
-</div>
-  </section>
   <footer>
     © 2026 SO SO
   </footer>
